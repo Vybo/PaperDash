@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcf5f5da-43a3-4095-94e0-3e70471a30e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/foundation_kit/Arguments.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foundation_kit/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui_image_kit/FullscreenMessageWithIcon.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui_image_kit/ImageLoader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui_image_kit/Structures.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dash.py" beforeDir="false" afterPath="$PROJECT_DIR$/dash.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_image_kit/FullscreenMessage.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui_image_kit/FullscreenMessage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_image_kit/FullscreenMessageWithIcon.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui_image_kit/FullscreenMessageWithIcon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_image_kit/FullscreenView.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui_image_kit/FullscreenView.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +59,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.dash-window-output">
+  <component name="RunManager" selected="Python.dash">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="PaperDash" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -187,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575138643411</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Output can be rendered into image and shown on desktop instead of running full paper cycle.">
+      <created>1575143376091</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1575143376091</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,6 +214,18 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial implementation of a fullscreen message view." />
     <MESSAGE value="Refactored folder name." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored folder name." />
+    <MESSAGE value="Output can be rendered into image and shown on desktop instead of running full paper cycle." />
+    <option name="LAST_COMMIT_MESSAGE" value="Output can be rendered into image and shown on desktop instead of running full paper cycle." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ui_image_kit/ImageLoader.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

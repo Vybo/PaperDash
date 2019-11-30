@@ -5,12 +5,11 @@ import os
 
 
 class FullscreenMessage(FullscreenView):
-    def __init__(self, message, draw, width, height):
+    def __init__(self, message, context):
         """Initialize the view with a drawing context and a message to be displayed in the middle of the screen.
-        context - Pillow ImageDraw
         message - String
         """
-        FullscreenView.__init__(self, draw, width, height)
+        FullscreenView.__init__(self, context)
         self.message = message
         self.font = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
 
@@ -24,14 +23,14 @@ class FullscreenMessage(FullscreenView):
 
         super().draw_view()
 
-        letter_width = 24 / 2
+        letter_width = 24 // 2
         letter_height = 24
 
         letter_count = len(self.message)
         message_width = letter_width * letter_count
         message_height = letter_height
 
-        xPos = (self.width / 2) - (message_width / 2)
-        yPos = (self.height / 2) - (message_height / 2)
+        xPos = (self.context.width // 2) - (message_width // 2)
+        yPos = (self.context.height // 2) - (message_height // 2)
 
-        self.draw.text((xPos, yPos), self.message, font=self.font, fill=0)
+        self.context.draw.text((xPos, yPos), self.message, font=self.font, fill=0)

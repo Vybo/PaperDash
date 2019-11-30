@@ -6,7 +6,10 @@ from PIL import Image, ImageDraw, ImageFont
 from lib.waveshare_epd import epd7in5
 
 from GlobalVariables import *
-from ui_image_kit.FullscreenMessage import *
+from ui_image_kit.FullscreenMessageWithIcon import *
+from ui_image_kit.ImageLoader import *
+from ui_image_kit.Structures import Context
+
 from foundation_kit.Arguments import *
 
 logging.basicConfig(level=logging.NOTSET)
@@ -33,6 +36,9 @@ screen_height = epd7in5.EPD_HEIGHT
 # Setup the core drawing context
 Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
 draw = ImageDraw.Draw(Himage)
+context = Context(Himage, draw, screen_width, screen_height)
+
+loader = ImageLoader(picdir)
 
 # Main program
 # try:
@@ -41,9 +47,10 @@ if True:
 
     clearAtFinish = False
 
-    message = "I am not an empty frame anymore."
+    message = "powered off"
+    icon = loader.get_bw_image('turn-off.png')
 
-    fullscreenMessage = FullscreenMessage(message, draw, screen_width, screen_height)
+    fullscreenMessage = FullscreenMessageWithIcon(message, icon, (128, 128), context)
     fullscreenMessage.draw_view()
 
     if clearAtFinish:

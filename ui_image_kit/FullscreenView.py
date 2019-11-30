@@ -2,16 +2,10 @@ import logging
 
 
 class FullscreenView:
-    def __init__(self, draw, width, height):
+    def __init__(self, context):
         """Initialize the view with a drawing context
-
-        draw - Pillow ImageDraw
-        width - Int screen width
-        height - Int screen height
         """
-        self.draw = draw
-        self.width = width
-        self.height = height
+        self.context = context
 
     def draw_view(self):
         """Will draw the content into the context.
