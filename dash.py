@@ -7,16 +7,22 @@ from lib.waveshare_epd import epd7in5
 
 from GlobalVariables import *
 from ui_image_kit.FullscreenMessage import *
+from foundation_kit.Arguments import *
 
 logging.basicConfig(level=logging.NOTSET)
 
-# Initial setup of the display. Init and full clear cycle.
-logging.info("Initializing display.")
+arguments = Arguments('--', sys.argv[1:])
+output_to_display = arguments.output_is_window() is False
+
 epd = epd7in5.EPD()
 
-epd.init()
-logging.info("Doing full clear cycle.")
-epd.Clear()
+# Initial setup of the display. Init and full clear cycle.
+if output_to_display:
+    logging.info("Initializing display.")
+
+    epd.init()
+    logging.info("Doing full clear cycle.")
+    epd.Clear()
 
 logging.info("Setting up program.")
 # Global variables
@@ -54,8 +60,11 @@ if True:
 #     draw.text((10, 10), 'Program ran into exception, sleeping.', font=font24, fill=0)
 
 # Display fully drawn image, no matter what happened.
-epd.display(epd.getbuffer(Himage))
+if output_to_display:
+    epd.display(epd.getbuffer(Himage))
+    # Sleep the display, so it consumes 0 enery
+    logging.info("Drawing finished, sleeping display.")
+    epd.sleep()
+else:
+    Himage.show('Output')
 
-# Sleep the display, so it consumes 0 enery
-logging.info("Drawing finished, sleeping display.")
-epd.sleep()
