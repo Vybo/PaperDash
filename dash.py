@@ -5,10 +5,10 @@ import logging
 from PIL import Image, ImageDraw, ImageFont
 from lib.waveshare_epd import epd7in5
 
-picdir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'pic')
-libdir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lib')
-if os.path.exists(libdir):
-    sys.path.append(libdir)
+from GlobalVariables import *
+from views.FullscreenMessage import *
+
+logging.basicConfig(level=logging.NOTSET)
 
 # Initial setup of the display. Init and full clear cycle.
 logging.info("Initializing display.")
@@ -20,14 +20,11 @@ epd.Clear()
 
 logging.info("Setting up program.")
 # Global variables
-screenWidth = epd7in5.EPD_WIDTH
-screenHeight = epd7in5.EPD_HEIGHT
 
-# Resources setup
-font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
-font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
+screen_width = epd7in5.EPD_WIDTH
+screen_height = epd7in5.EPD_HEIGHT
 
-# Basic frame to draw in setup
+# Setup the core drawing context
 Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
 draw = ImageDraw.Draw(Himage)
 
@@ -38,19 +35,10 @@ if True:
 
     clearAtFinish = False
 
-    letterWidth = 24 / 2
-    letterHeight = 24
-
     message = "I am not an empty frame anymore."
 
-    letterCount = len(message)
-    messageWidth = letterWidth * letterCount
-    messageHeight = 24
-
-    xPos = (screenWidth / 2) - (messageWidth / 2)
-    yPos = (screenHeight / 2) - (messageHeight / 2)
-
-    draw.text((xPos, yPos), message, font=font24, fill=0)
+    fullscreenMessage = FullscreenMessage(message, draw, screen_width, screen_height)
+    fullscreenMessage.draw_view()
 
     if clearAtFinish:
         logging.info("Flag clear at finish set to true, clearing when done.")

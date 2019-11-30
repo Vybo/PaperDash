@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dcf5f5da-43a3-4095-94e0-3e70471a30e1" name="Default Changelist" comment="" />
+    <list default="true" id="dcf5f5da-43a3-4095-94e0-3e70471a30e1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dash.py" beforeDir="false" afterPath="$PROJECT_DIR$/dash.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/FullscreenMessage.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/FullscreenMessage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/FullscreenView.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/FullscreenView.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +20,21 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Dan Vybiral &lt;the.vybo@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1UG3dYqu8wYkPii9ekGN5OpUPVW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/waveshare/e-Paper/RaspberryPi&amp;JetsonNano/python/examples/epd_7in5_test.py" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -118,6 +136,37 @@
       <option name="presentableId" value="Default" />
       <updated>1574969193449</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial implementation of a fullscreen message view.">
+      <created>1575137031095</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575137031095</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Initial implementation of a fullscreen message view.">
+      <created>1575137298957</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575137298957</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Initial implementation of a fullscreen message view." />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial implementation of a fullscreen message view." />
   </component>
 </project>
