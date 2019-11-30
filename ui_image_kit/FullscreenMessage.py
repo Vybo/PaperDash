@@ -1,5 +1,5 @@
 from GlobalVariables import *
-from views.FullscreenView import *
+from ui_image_kit.FullscreenView import *
 from PIL import Image, ImageDraw, ImageFont
 import os
 

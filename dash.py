@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 from lib.waveshare_epd import epd7in5
 
 from GlobalVariables import *
-from views.FullscreenMessage import *
+from ui_image_kit.FullscreenMessage import *
 
 logging.basicConfig(level=logging.NOTSET)
 
