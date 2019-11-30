@@ -5,7 +5,7 @@ import os
 
 
 class FullscreenMessageWithIcon(FullscreenView):
-    def __init__(self, message, icon, icon_size, context):
+    def __init__(self, message, font_size, icon, icon_size, context):
         """Initialize the view with a drawing context and a message with icon to be displayed in the middle of the screen.
 
         message - String
@@ -18,10 +18,11 @@ class FullscreenMessageWithIcon(FullscreenView):
         """
         FullscreenView.__init__(self, context)
         self.message = message
-        self.font = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 32)
+        self.font = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), font_size)
         self.icon_size = icon_size
         self.icon = icon.resize(self.icon_size)
-        self.spacing = 24
+        self.spacing = font_size // 2
+        self.font_size = font_size
 
     def draw_view(self):
         """Will clear the screen and draw a message in the middle of it with a 24 sized default Font.
@@ -34,8 +35,8 @@ class FullscreenMessageWithIcon(FullscreenView):
 
         super().draw_view()
 
-        letter_width = 32 // 2
-        letter_height = 32
+        letter_width = self.font_size // 2
+        letter_height = self.font_size
 
         letter_count = len(self.message)
         message_width = letter_width * letter_count

@@ -1,6 +1,7 @@
 import sys
 import os
 import time
+import datetime
 import logging
 from PIL import Image, ImageDraw, ImageFont
 from lib.waveshare_epd import epd7in5
@@ -40,23 +41,18 @@ context = Context(Himage, draw, screen_width, screen_height)
 
 loader = ImageLoader(picdir)
 
+clearAtFinish = True
+
 # Main program
 # try:
 if True:
     logging.info("Running drawing refresh.")
 
-    clearAtFinish = False
-
-    message = "powered off"
-    icon = loader.get_bw_image('turn-off.png')
-
-    fullscreenMessage = FullscreenMessageWithIcon(message, icon, (128, 128), context)
+    time = datetime.datetime.now().strftime("%H:%M")
+    message = time
+    icon = loader.get_bw_image('clock.png')
+    fullscreenMessage = FullscreenMessageWithIcon(message, 48, icon, (48, 48), context)
     fullscreenMessage.draw_view()
-
-    if clearAtFinish:
-        logging.info("Flag clear at finish set to true, clearing when done.")
-        epd.Clear()
-        Himage = Image.open(os.path.join(picdir, '7in5.bmp'))
 
 # except:
 #     logging.critical("Program ran into exception, drawing error message before crash.")
@@ -69,6 +65,20 @@ if True:
 # Display fully drawn image, no matter what happened.
 if output_to_display:
     epd.display(epd.getbuffer(Himage))
+
+    if clearAtFinish:
+        logging.info("Flag clear at finish set to true, clearing when done.")
+
+        Himage = Image.new('1', (epd.width, epd.height), 255)
+        draw = ImageDraw.Draw(Himage)
+        context = Context(Himage, draw, screen_width, screen_height)
+        message = "powered off"
+        icon = loader.get_bw_image('turn-off.png')
+        fullscreenMessage = FullscreenMessageWithIcon(message, 24, icon, (128, 128), context)
+        fullscreenMessage.draw_view()
+
+        epd.display(epd.getbuffer(Himage))
+
     # Sleep the display, so it consumes 0 enery
     logging.info("Drawing finished, sleeping display.")
     epd.sleep()
