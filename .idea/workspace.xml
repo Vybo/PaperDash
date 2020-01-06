@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcf5f5da-43a3-4095-94e0-3e70471a30e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pic/clock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dash.py" beforeDir="false" afterPath="$PROJECT_DIR$/dash.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui_image_kit/FullscreenMessageWithIcon.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui_image_kit/FullscreenMessageWithIcon.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,10 +30,16 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="/usr/local/lib/python3.7/dist-packages/PIL/ImageShow.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -43,18 +47,6 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib/waveshare_epd" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.dash-window-output">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -128,11 +120,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/waveshare/e-Paper/RaspberryPi&amp;JetsonNano/python/examples" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../waveshare/e-Paper/RaspberryPi&amp;JetsonNano/python/examples" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/waveshare/e-Paper/RaspberryPi&amp;JetsonNano/python/examples/epd_7in5_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../waveshare/e-Paper/RaspberryPi&amp;JetsonNano/python/examples/epd_7in5_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -146,6 +138,18 @@
       <item itemvalue="Python.dash-window-output" />
       <item itemvalue="Python.dsplay test" />
     </list>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -208,7 +212,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -221,5 +227,31 @@
     <MESSAGE value="Output can be rendered into image and shown on desktop instead of running full paper cycle." />
     <MESSAGE value="Working full screen message view with icon." />
     <option name="LAST_COMMIT_MESSAGE" value="Working full screen message view with icon." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="833" height="334" key="GridCell.Tab.0.bottom" timestamp="1578309346587">
+      <screen x="0" y="23" width="3440" height="1417" />
+    </state>
+    <state width="833" height="334" key="GridCell.Tab.0.bottom/0.23.3440.1417@0.23.3440.1417" timestamp="1578309346587" />
+    <state width="833" height="334" key="GridCell.Tab.0.center" timestamp="1578309346586">
+      <screen x="0" y="23" width="3440" height="1417" />
+    </state>
+    <state width="833" height="334" key="GridCell.Tab.0.center/0.23.3440.1417@0.23.3440.1417" timestamp="1578309346586" />
+    <state width="833" height="334" key="GridCell.Tab.0.left" timestamp="1578309346586">
+      <screen x="0" y="23" width="3440" height="1417" />
+    </state>
+    <state width="833" height="334" key="GridCell.Tab.0.left/0.23.3440.1417@0.23.3440.1417" timestamp="1578309346586" />
+    <state width="833" height="334" key="GridCell.Tab.0.right" timestamp="1578309346587">
+      <screen x="0" y="23" width="3440" height="1417" />
+    </state>
+    <state width="833" height="334" key="GridCell.Tab.0.right/0.23.3440.1417@0.23.3440.1417" timestamp="1578309346587" />
+    <state x="1699" y="343" key="SettingsEditor" timestamp="1578309256375">
+      <screen x="0" y="23" width="3440" height="1417" />
+    </state>
+    <state x="1699" y="343" key="SettingsEditor/0.23.3440.1417@0.23.3440.1417" timestamp="1578309256375" />
+    <state x="1413" y="563" key="com.intellij.ide.util.TipDialog" timestamp="1578308580189">
+      <screen x="0" y="23" width="3440" height="1417" />
+    </state>
+    <state x="1413" y="563" key="com.intellij.ide.util.TipDialog/0.23.3440.1417@0.23.3440.1417" timestamp="1578308580189" />
   </component>
 </project>

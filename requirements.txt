@@ -1,0 +1,3 @@
+Pillow
+FakeRPi # https://github.com/sn4k3/FakeRPi
+epd-library

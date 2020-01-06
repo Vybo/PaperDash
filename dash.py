@@ -1,24 +1,30 @@
+from foundation_kit.Arguments import *
 import sys
+
+arguments = Arguments('--', sys.argv[1:])
+output_to_display = arguments.output_is_window() is False
+
 import os
 import time
 import datetime
 import logging
 from PIL import Image, ImageDraw, ImageFont
-from lib.waveshare_epd import epd7in5
+
+if output_to_display:
+    from lib.waveshare_epd import epd7in5
+    epd = epd7in5.EPD()
+    screen_width = epd7in5.EPD_WIDTH
+    screen_height = epd7in5.EPD_HEIGHT
+else:
+    screen_width = 640
+    screen_height = 384
 
 from GlobalVariables import *
 from ui_image_kit.FullscreenMessageWithIcon import *
 from ui_image_kit.ImageLoader import *
 from ui_image_kit.Structures import Context
 
-from foundation_kit.Arguments import *
-
 logging.basicConfig(level=logging.NOTSET)
-
-arguments = Arguments('--', sys.argv[1:])
-output_to_display = arguments.output_is_window() is False
-
-epd = epd7in5.EPD()
 
 # Initial setup of the display. Init and full clear cycle.
 if output_to_display:
@@ -31,11 +37,10 @@ if output_to_display:
 logging.info("Setting up program.")
 # Global variables
 
-screen_width = epd7in5.EPD_WIDTH
-screen_height = epd7in5.EPD_HEIGHT
+
 
 # Setup the core drawing context
-Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
+Himage = Image.new('1', (screen_width, screen_height), 255)  # 255: clear the frame
 draw = ImageDraw.Draw(Himage)
 context = Context(Himage, draw, screen_width, screen_height)
 
