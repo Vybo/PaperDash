@@ -4,16 +4,10 @@ import logging
 
 
 class DashScheduler:
-    def __init__(self, dashes, render_function):
+    def __init__(self, dashes, render_function, context):
         self.dashes = dashes
         self.render_function = render_function
-
-    def start(self):
-        logging.info("Scheduling jobs started.")
-        self.run()
-        while True:
-            schedule.run_pending()
-            time.sleep(1)
+        self.context = context
 
     def run(self):
         logging.info("Running all dashes.")
@@ -21,7 +15,15 @@ class DashScheduler:
         for dash in self.dashes:
             dash.drawContent()
 
-        self.render_function()
+        self.render_function(self.context)
 
-        schedule.every().minute.do(self, self.run(self))
+        logging.info("Cycle completed")
+
+    def start(self):
+        logging.info("Scheduling jobs started.")
+        self.run()
+        schedule.every().minute.do(self.run)
+
+        while True:
+            schedule.run_pending()
 

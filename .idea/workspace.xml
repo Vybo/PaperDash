@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcf5f5da-43a3-4095-94e0-3e70471a30e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dash_kit/DashType.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dash_kit/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dash_scheduler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashes/Dash.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashes/FullscreenTimeDash.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashes/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dash.py" beforeDir="false" afterPath="$PROJECT_DIR$/dash.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dash_scheduler.py" beforeDir="false" afterPath="$PROJECT_DIR$/dash_scheduler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashes/FullscreenTimeDash.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashes/FullscreenTimeDash.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,21 +235,21 @@
     <option name="LAST_COMMIT_MESSAGE" value="Working full screen message view with icon." />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1673" height="392" key="GridCell.Tab.0.bottom" timestamp="1588942285289">
+    <state width="1899" height="305" key="GridCell.Tab.0.bottom" timestamp="1588956762808">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1673" height="392" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1588942285289" />
-    <state width="1673" height="392" key="GridCell.Tab.0.center" timestamp="1588942285288">
+    <state width="1899" height="305" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1588956762808" />
+    <state width="1899" height="305" key="GridCell.Tab.0.center" timestamp="1588956762807">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1673" height="392" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1588942285288" />
-    <state width="1673" height="392" key="GridCell.Tab.0.left" timestamp="1588942285287">
+    <state width="1899" height="305" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1588956762807" />
+    <state width="1899" height="305" key="GridCell.Tab.0.left" timestamp="1588956762807">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1673" height="392" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1588942285287" />
-    <state width="1673" height="392" key="GridCell.Tab.0.right" timestamp="1588942285288">
+    <state width="1899" height="305" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1588956762807" />
+    <state width="1899" height="305" key="GridCell.Tab.0.right" timestamp="1588956762808">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1673" height="392" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1588942285288" />
+    <state width="1899" height="305" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1588956762808" />
   </component>
 </project>

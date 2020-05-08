@@ -1,7 +1,7 @@
 from dash_kit import DashType
 from ui_image_kit.FullscreenMessageWithIcon import *
 import datetime
-from dashes import Dash
+from dashes.Dash import Dash
 
 
 class FullscreenTimeDash(Dash):
@@ -10,7 +10,7 @@ class FullscreenTimeDash(Dash):
         self.context = context
         self.loader = loader
         self.icon = loader.get_bw_image('clock.png')
-        self.fullscreen_message = FullscreenMessageWithIcon("", 48, icon, (48, 48), self.context)
+        self.fullscreen_message = FullscreenMessageWithIcon("", 48, self.icon, (48, 48), self.context)
 
     def drawContent(self):
         time = datetime.datetime.now().strftime("%H:%M")

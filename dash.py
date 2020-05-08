@@ -21,7 +21,7 @@ from GlobalVariables import *
 from ui_image_kit.ImageLoader import *
 from ui_image_kit.Structures import Context
 from dash_scheduler import DashScheduler
-from dashes import FullscreenTimeDash
+from dashes.FullscreenTimeDash import FullscreenTimeDash
 from dash_kit.DashType import DashType
 
 logging.basicConfig(level=logging.NOTSET)
@@ -50,13 +50,12 @@ clearAtFinish = True
 windowRenderer = None
 
 defaultDash = FullscreenTimeDash(context, loader, DashType.FULLSCREEN)
-dashScheduler = DashScheduler([defaultDash])
 
 if output_to_display is False:
     windowRenderer = TkinkerRenderer(screen_height, screen_width)
 
 
-def render(context):
+def render(render_context):
     # Main program
     # try:
     if True:
@@ -71,18 +70,19 @@ def render(context):
 
     # Display fully drawn image, no matter what happened.
     if output_to_display:
+        from ui_image_kit import FullscreenMessageWithIcon
+
         epd.display(epd.getbuffer(Himage))
 
         if clearAtFinish:
             logging.info("Flag clear at finish set to true, clearing when done.")
 
-            Himage = Image.new('1', (epd.width, epd.height), 255)
-            draw = ImageDraw.Draw(Himage)
-            context = Context(Himage, draw, screen_width, screen_height)
+            render_context.image = Image.new('1', (epd.width, epd.height), 255)
+            render_context.draw = ImageDraw.Draw(Himage)
             message = "powered off"
             icon = loader.get_bw_image('turn-off.png')
-            fullscreenMessage = FullscreenMessageWithIcon(message, 24, icon, (128, 128), context)
-            fullscreenMessage.draw_view()
+            fullscreen_message = FullscreenMessageWithIcon(message, 24, icon, (128, 128), render_context)
+            fullscreen_message.draw_view()
 
             epd.display(epd.getbuffer(Himage))
 
@@ -91,5 +91,9 @@ def render(context):
         epd.sleep()
     else:
         # Himage.show('Output')
-        windowRenderer.renderImage(Himage)
+        windowRenderer.renderImage(render_context.image)
+
+
+dashScheduler = DashScheduler([defaultDash], render_function=render, context=context)
+dashScheduler.start()
 
