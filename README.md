@@ -17,3 +17,9 @@ My own dashboard implemented for Waveshare 7.5" BTW e-paper display
 * Widgetized dashboards (splitting into smaller ViewModels)
 * Various data sources for ViewModels (will need some multithreading work)
 * More UI parts
+
+![Rendering to e-paper display][ebd-render]
+![Rendering to Tkinker window][window-render]
+
+[ebd-render]: https://github.com/Vybo/PaperDash/blob/master/Readme/ebd-render.png "Rendering to e-paper display"
+[window-render]: https://github.com/Vybo/PaperDash/blob/master/Readme/window-render.png "Rendering to Tkinker window"
