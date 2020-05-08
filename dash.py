@@ -9,6 +9,7 @@ import time
 import datetime
 import logging
 from PIL import Image, ImageDraw, ImageFont
+from tkinker_renderer import TkinkerRenderer
 
 if output_to_display:
     from lib.waveshare_epd import epd7in5
@@ -47,6 +48,11 @@ context = Context(Himage, draw, screen_width, screen_height)
 loader = ImageLoader(picdir)
 
 clearAtFinish = True
+
+windowRenderer = None
+
+if output_to_display is False:
+    windowRenderer = TkinkerRenderer(screen_height, screen_width)
 
 # Main program
 # try:
@@ -88,5 +94,6 @@ if output_to_display:
     logging.info("Drawing finished, sleeping display.")
     epd.sleep()
 else:
-    Himage.show('Output')
+    # Himage.show('Output')
+    windowRenderer.renderImage(Himage)
 
