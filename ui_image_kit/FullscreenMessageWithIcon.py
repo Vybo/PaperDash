@@ -55,3 +55,4 @@ class FullscreenMessageWithIcon(FullscreenView):
 
         self.context.image.paste(self.icon, offset)
         self.context.draw.text((message_x_pos, message_y_pos), self.message, font=self.font, fill=0)
+

@@ -49,10 +49,12 @@ clearAtFinish = True
 
 windowRenderer = None
 
-defaultDash = FullscreenTimeDash(context, loader, DashType.FULLSCREEN)
+secondsInAdvance = 10 if output_to_display else 0
+
+defaultDash = FullscreenTimeDash(context, loader, DashType.FULLSCREEN, secondsInAdvance)
 
 if output_to_display is False:
-    windowRenderer = TkinkerRenderer(screen_height, screen_width)
+    windowRenderer = TkinkerRenderer(screen_width, screen_height)
 
 
 def render(render_context):
@@ -94,6 +96,11 @@ def render(render_context):
         windowRenderer.renderImage(render_context.image)
 
 
-dashScheduler = DashScheduler([defaultDash], render_function=render, context=context)
+dashScheduler = DashScheduler(
+    [defaultDash],
+    render_function=render,
+    context=context,
+    seconds_in_advance=secondsInAdvance
+)
 dashScheduler.start()
 
