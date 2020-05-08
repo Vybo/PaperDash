@@ -4,9 +4,6 @@ import sys
 arguments = Arguments('--', sys.argv[1:])
 output_to_display = arguments.output_is_window() is False
 
-import os
-import time
-import datetime
 import logging
 from PIL import Image, ImageDraw, ImageFont
 from tkinker_renderer import TkinkerRenderer
@@ -21,9 +18,11 @@ else:
     screen_height = 384
 
 from GlobalVariables import *
-from ui_image_kit.FullscreenMessageWithIcon import *
 from ui_image_kit.ImageLoader import *
 from ui_image_kit.Structures import Context
+from dash_scheduler import DashScheduler
+from dashes import FullscreenTimeDash
+from dash_kit.DashType import DashType
 
 logging.basicConfig(level=logging.NOTSET)
 
@@ -36,14 +35,13 @@ if output_to_display:
     epd.Clear()
 
 logging.info("Setting up program.")
-# Global variables
-
-
 
 # Setup the core drawing context
 Himage = Image.new('1', (screen_width, screen_height), 255)  # 255: clear the frame
 draw = ImageDraw.Draw(Himage)
 context = Context(Himage, draw, screen_width, screen_height)
+
+# Global variables
 
 loader = ImageLoader(picdir)
 
@@ -51,49 +49,47 @@ clearAtFinish = True
 
 windowRenderer = None
 
+defaultDash = FullscreenTimeDash(context, loader, DashType.FULLSCREEN)
+dashScheduler = DashScheduler([defaultDash])
+
 if output_to_display is False:
     windowRenderer = TkinkerRenderer(screen_height, screen_width)
 
-# Main program
-# try:
-if True:
-    logging.info("Running drawing refresh.")
 
-    time = datetime.datetime.now().strftime("%H:%M")
-    message = time
-    icon = loader.get_bw_image('clock.png')
-    fullscreenMessage = FullscreenMessageWithIcon(message, 48, icon, (48, 48), context)
-    fullscreenMessage.draw_view()
+def render(context):
+    # Main program
+    # try:
+    if True:
+        logging.info("Running drawing refresh.")
+    # except:
+    #     logging.critical("Program ran into exception, drawing error message before crash.")
+    #     shape = (3, 3, 628, 48)
+    #     draw.rectangle(shape, fill=0)
+    #     shape = (5, 5, 630, 50)
+    #     draw.rectangle(shape, fill=255, outline=255, width=1)
+    #     draw.text((10, 10), 'Program ran into exception, sleeping.', font=font24, fill=0)
 
-# except:
-#     logging.critical("Program ran into exception, drawing error message before crash.")
-#     shape = (3, 3, 628, 48)
-#     draw.rectangle(shape, fill=0)
-#     shape = (5, 5, 630, 50)
-#     draw.rectangle(shape, fill=255, outline=255, width=1)
-#     draw.text((10, 10), 'Program ran into exception, sleeping.', font=font24, fill=0)
-
-# Display fully drawn image, no matter what happened.
-if output_to_display:
-    epd.display(epd.getbuffer(Himage))
-
-    if clearAtFinish:
-        logging.info("Flag clear at finish set to true, clearing when done.")
-
-        Himage = Image.new('1', (epd.width, epd.height), 255)
-        draw = ImageDraw.Draw(Himage)
-        context = Context(Himage, draw, screen_width, screen_height)
-        message = "powered off"
-        icon = loader.get_bw_image('turn-off.png')
-        fullscreenMessage = FullscreenMessageWithIcon(message, 24, icon, (128, 128), context)
-        fullscreenMessage.draw_view()
-
+    # Display fully drawn image, no matter what happened.
+    if output_to_display:
         epd.display(epd.getbuffer(Himage))
 
-    # Sleep the display, so it consumes 0 enery
-    logging.info("Drawing finished, sleeping display.")
-    epd.sleep()
-else:
-    # Himage.show('Output')
-    windowRenderer.renderImage(Himage)
+        if clearAtFinish:
+            logging.info("Flag clear at finish set to true, clearing when done.")
+
+            Himage = Image.new('1', (epd.width, epd.height), 255)
+            draw = ImageDraw.Draw(Himage)
+            context = Context(Himage, draw, screen_width, screen_height)
+            message = "powered off"
+            icon = loader.get_bw_image('turn-off.png')
+            fullscreenMessage = FullscreenMessageWithIcon(message, 24, icon, (128, 128), context)
+            fullscreenMessage.draw_view()
+
+            epd.display(epd.getbuffer(Himage))
+
+        # Sleep the display, so it consumes 0 enery
+        logging.info("Drawing finished, sleeping display.")
+        epd.sleep()
+    else:
+        # Himage.show('Output')
+        windowRenderer.renderImage(Himage)
 

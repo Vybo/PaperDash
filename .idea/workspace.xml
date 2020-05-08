@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcf5f5da-43a3-4095-94e0-3e70471a30e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tkinker_renderer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dash_kit/DashType.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dash_kit/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dash_scheduler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashes/Dash.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashes/FullscreenTimeDash.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashes/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dash.py" beforeDir="false" afterPath="$PROJECT_DIR$/dash.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +50,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dashes" />
+      <recent name="$PROJECT_DIR$/dash_kit" />
       <recent name="$PROJECT_DIR$/lib/waveshare_epd" />
     </key>
   </component>
