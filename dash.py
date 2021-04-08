@@ -24,8 +24,12 @@ from dash_scheduler import DashScheduler
 from dashes.FullscreenTimeDash import FullscreenTimeDash
 from dashes.FullsreenAptMapDash import FullScreenAptMapDash
 from dash_kit.DashType import DashType
+from integrations import mosquito_client
 
 logging.basicConfig(level=logging.NOTSET)
+
+mqtt = mosquito_client.MosquitoClient()
+
 
 # Initial setup of the display. Init and full clear cycle.
 if output_to_display:

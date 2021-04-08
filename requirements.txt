@@ -2,3 +2,4 @@ Pillow
 git+https://github.com/sn4k3/FakeRPi # FakeRPi # https://github.com/sn4k3/FakeRPi
 epd-library
 schedule
+paho-mqtt

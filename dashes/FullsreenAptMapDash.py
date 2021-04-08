@@ -13,8 +13,8 @@ class FullScreenAptMapDash(Dash):
         self.loader = loader
         self.apt_map = loader.get_bw_image('apt.png')
         # There would be an image resize, but this image is exact fit for the display
-        self.font_size = 48
-        self.font = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), self.font_size)
+        self.font_big = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 48)
+        self.font_small = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
 
 
     def drawContent(self):
@@ -33,4 +33,6 @@ class FullScreenAptMapDash(Dash):
 
     def draw_clock(self, time_string):
         clock_offset = (72, 24)
-        self.context.draw.text(clock_offset, time_string, font=self.font, fill=0)
+        self.context.draw.text(clock_offset, time_string, font=self.font_big, fill=0)
+        message_offset = (72, 24+48)
+        self.context.draw.text(message_offset, 'broker offline', font=self.font_small, fill=0)

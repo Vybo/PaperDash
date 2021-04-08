@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcf5f5da-43a3-4095-94e0-3e70471a30e1" name="Default Changelist" comment="Working full screen message view with icon.">
-      <change afterPath="$PROJECT_DIR$/dashes/FullsreenAptMapDash.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pic/apt.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PaperDash.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PaperDash.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/integrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/integrations/mosquito_client.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dash.py" beforeDir="false" afterPath="$PROJECT_DIR$/dash.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashes/FullsreenAptMapDash.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashes/FullsreenAptMapDash.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -236,5 +235,16 @@
     <MESSAGE value="Output can be rendered into image and shown on desktop instead of running full paper cycle." />
     <MESSAGE value="Working full screen message view with icon." />
     <option name="LAST_COMMIT_MESSAGE" value="Working full screen message view with icon." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/integrations/mosquito_client.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
