@@ -13,13 +13,13 @@ def get_default_entities():
 
 
 class MosquitoClient:
-    def __init__(self):
+    def __init__(self, entities=get_default_entities()):
         self.mqtt_broker = '192.168.0.2'
         self.client = mqtt.Client("paperdash")
         self.client.username_pw_set() #input here
         self.client.on_message = self.on_message
         self.client.on_connect = self.on_connect
-        self.entities = []
+        self.entities = entities
         self.connect()
 
     def connect(self):
@@ -34,7 +34,5 @@ class MosquitoClient:
         logging.info("[MQTT] Received message: ", str(message.payload.decode("utf-8")))
 
     def subscribe(self):
-        entities = get_default_entities()
-
-        for e in entities:
+        for e in self.entities:
             self.client.subscribe(e.mqtt_topic)

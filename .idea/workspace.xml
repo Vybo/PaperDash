@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcf5f5da-43a3-4095-94e0-3e70471a30e1" name="Default Changelist" comment="Working full screen message view with icon.">
-      <change afterPath="$PROJECT_DIR$/integrations/MosquitoEntities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PaperDash.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PaperDash.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dash.py" beforeDir="false" afterPath="$PROJECT_DIR$/dash.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashes/FullsreenAptMapDash.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashes/FullsreenAptMapDash.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integrations/MosquitoEntities.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrations/MosquitoEntities.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integrations/mosquito_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrations/mosquito_client.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +83,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\vybo\Documents\GitHub\PaperDash\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -232,16 +236,5 @@
     <MESSAGE value="Output can be rendered into image and shown on desktop instead of running full paper cycle." />
     <MESSAGE value="Working full screen message view with icon." />
     <option name="LAST_COMMIT_MESSAGE" value="Working full screen message view with icon." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/integrations/mosquito_client.py</url>
-          <line>33</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
