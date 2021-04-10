@@ -16,7 +16,7 @@ class MosquitoClient:
     def __init__(self, entities=get_default_entities()):
         self.mqtt_broker = '-'
         self.client = mqtt.Client("paperdash")
-        self.client.username_pw_set('-', '-') #input here
+        self.client.username_pw_set('my_username', 'my_password') # input here
         self.client.on_message = self.on_message
         self.client.on_connect = self.on_connect
         self.entities = entities

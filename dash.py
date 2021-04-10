@@ -25,6 +25,7 @@ from ui_image_kit.Structures import Context
 from dash_scheduler import DashScheduler
 from dashes.PhotoDash import PhotoDash
 from dash_kit.DashType import DashType
+from integrations import mosquito_client
 
 logging.basicConfig(level=logging.NOTSET)
 
