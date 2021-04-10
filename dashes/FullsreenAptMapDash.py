@@ -4,11 +4,10 @@ import os
 from PIL import Image, ImageDraw, ImageFont
 import datetime
 from dashes.Dash import Dash
-from integrations import mosquito_client
 
 
 class FullScreenAptMapDash(Dash):
-    def __init__(self, context, loader, dash_type, seconds_in_advance):
+    def __init__(self, context, loader, dash_type, seconds_in_advance, client):
         Dash.__init__(self, dash_type, seconds_in_advance)
         self.context = context
         self.loader = loader
@@ -20,7 +19,7 @@ class FullScreenAptMapDash(Dash):
         self.bulb_off_icon = loader.get_bw_image('lightbulb-outline.png')
         self.bulb_on_icon = loader.get_bw_image('lightbulb-on.png')
 
-        # self.mqtt = mosquito_client.MosquitoClient()
+        self.mqtt = client
 
 
     def drawContent(self):
@@ -59,31 +58,32 @@ class FullScreenAptMapDash(Dash):
         bedroom_bulb1_offset = (410, 80)
         self.draw_bulb(bedroom_bulb1_offset, False)
         bedroom_bulb2_offset = (460, 140)
-        self.draw_bulb(bedroom_bulb2_offset, True)
+        self.draw_bulb(bedroom_bulb2_offset, False)
 
         # Hall values
         hall_msg_offset = (194, 120)
         self.draw_atm_sensor_box(hall_msg_offset, 23, 40)
         hall_bulb_offset = (263, 140)
-        self.draw_bulb(hall_bulb_offset, True)
+        self.draw_bulb(hall_bulb_offset, False)
 
         # Dining room values
         dining_room_bulb_offset = (246, 210)
-        self.draw_bulb(dining_room_bulb_offset, True)
+        self.draw_bulb(dining_room_bulb_offset, False)
 
         # Kitchen values
         kitchen_bulb_offset = (153, 269)
-        self.draw_bulb(kitchen_bulb_offset, True)
+        self.draw_bulb(kitchen_bulb_offset, False)
 
         # Living room values
         living_room_msg_offset = (294, 150)
         self.draw_atm_sensor_box(living_room_msg_offset, 24.5, 45)
         living_room_bulb_offset = (375, 252)
-        self.draw_bulb(living_room_bulb_offset, True)
+        self.draw_bulb(living_room_bulb_offset, False)
 
         # Study values
+        study_light_on = self.mqtt.entities['homeassistant/light/study_ceiling/state'].state_on
         study_bulb_offset = (263, 50)
-        self.draw_bulb(study_bulb_offset, True)
+        self.draw_bulb(study_bulb_offset, study_light_on)
 
     def draw_map(self):
         apt_map_offset = (0, 0)

@@ -24,6 +24,7 @@ from dash_scheduler import DashScheduler
 from dashes.FullscreenTimeDash import FullscreenTimeDash
 from dashes.FullsreenAptMapDash import FullScreenAptMapDash
 from dash_kit.DashType import DashType
+from integrations import mosquito_client
 
 logging.basicConfig(level=logging.NOTSET)
 
@@ -52,8 +53,10 @@ windowRenderer = None
 
 secondsInAdvance = 10 if output_to_display else 0
 
+client = mosquito_client.MosquitoClient()
+
 #defaultDash = FullscreenTimeDash(context, loader, DashType.FULLSCREEN, secondsInAdvance)
-defaultDash = FullScreenAptMapDash(context, loader, DashType.FULLSCREEN, secondsInAdvance)
+defaultDash = FullScreenAptMapDash(context, loader, DashType.FULLSCREEN, secondsInAdvance, client)
 
 if output_to_display is False:
     windowRenderer = TkinkerRenderer(screen_width, screen_height)
