@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="dcf5f5da-43a3-4095-94e0-3e70471a30e1" name="Default Changelist" comment="Working full screen message view with icon.">
-      <change beforePath="$PROJECT_DIR$/.idea/PaperDash.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PaperDash.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashes/PhotoDash.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pic/photos/IMG_9485.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pic/photos/IMG_9641.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlobalVariables.py" beforeDir="false" afterPath="$PROJECT_DIR$/GlobalVariables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dash.py" beforeDir="false" afterPath="$PROJECT_DIR$/dash.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashes/FullsreenAptMapDash.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashes/FullsreenAptMapDash.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integrations/MosquitoEntities.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrations/MosquitoEntities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integrations/mosquito_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrations/mosquito_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dash_scheduler.py" beforeDir="false" afterPath="$PROJECT_DIR$/dash_scheduler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/waveshare_epd/epd7in5.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/waveshare_epd/epd7in5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/waveshare_epd/epdconfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/waveshare_epd/epdconfig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_image_kit/ImageLoader.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui_image_kit/ImageLoader.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +37,12 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
   <component name="ProjectId" id="1UG3dYqu8wYkPii9ekGN5OpUPVW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -38,17 +51,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.dash-window-output.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/done/PaperDash"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pic/photos" />
       <recent name="$PROJECT_DIR$/dashes" />
       <recent name="$PROJECT_DIR$/dash_kit" />
       <recent name="$PROJECT_DIR$/lib/waveshare_epd" />
@@ -57,6 +70,7 @@
   <component name="RunManager" selected="Python.dash-window-output">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="PaperDash" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -78,6 +92,7 @@
     </configuration>
     <configuration name="dash-window-output" type="PythonConfigurationType" factoryName="Python">
       <module name="PaperDash" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -85,7 +100,7 @@
       </envs>
       <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dash.py" />
@@ -99,6 +114,7 @@
     </configuration>
     <configuration name="dash" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="PaperDash" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -120,6 +136,7 @@
     </configuration>
     <configuration name="dsplay test" type="PythonConfigurationType" factoryName="Python">
       <module name="PaperDash" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -156,6 +173,13 @@
         </serviceView>
       </list>
     </option>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-50da183f06c8-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13135.95" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -227,7 +251,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

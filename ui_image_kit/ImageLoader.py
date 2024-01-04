@@ -1,5 +1,5 @@
 from PIL import Image
-
+import os
 
 class ImageLoader:
     def __init__(self, resources_directory):
@@ -9,6 +9,9 @@ class ImageLoader:
         image = Image.open(self.directory + '/' + name)  # open colour image
         image = self.remove_transparency(image).convert('L')  # convert image to black and white
         return image
+
+    def get_all_photo_names(self):
+        return [f for f in os.listdir(self.directory) if os.path.isfile(os.path.join(self.directory, f))]
 
     def remove_transparency(self, image, bg_colour=(255, 255, 255)):
         # Only process if image has transparency

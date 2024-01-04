@@ -6,7 +6,9 @@ output_to_display = arguments.output_is_window() is False
 
 import logging
 from PIL import Image, ImageDraw, ImageFont
-from tkinker_renderer import TkinkerRenderer
+
+if output_to_display == False:
+    from tkinker_renderer import TkinkerRenderer
 
 if output_to_display:
     from lib.waveshare_epd import epd7in5
@@ -23,8 +25,8 @@ from ui_image_kit.Structures import Context
 from dash_scheduler import DashScheduler
 from dashes.FullscreenTimeDash import FullscreenTimeDash
 from dashes.FullsreenAptMapDash import FullScreenAptMapDash
+from dashes.PhotoDash import PhotoDash
 from dash_kit.DashType import DashType
-from integrations import mosquito_client
 
 logging.basicConfig(level=logging.NOTSET)
 
@@ -45,28 +47,31 @@ context = Context(Himage, draw, screen_width, screen_height)
 
 # Global variables
 
-loader = ImageLoader(picdir)
+loader = ImageLoader(photodir)
 
-clearAtFinish = True
+clearAtFinish = False
 
 windowRenderer = None
 
 secondsInAdvance = 10 if output_to_display else 0
 
-client = mosquito_client.MosquitoClient()
+clearInterval = 5
 
-#defaultDash = FullscreenTimeDash(context, loader, DashType.FULLSCREEN, secondsInAdvance)
-defaultDash = FullScreenAptMapDash(context, loader, DashType.FULLSCREEN, secondsInAdvance, client)
+refreshCounter = 0
+
+# defaultDash = FullscreenTimeDash(context, loader, DashType.FULLSCREEN, secondsInAdvance)
+# defaultDash = FullScreenAptMapDash(context, loader, DashType.FULLSCREEN, secondsInAdvance, client)
+defaultDash = PhotoDash(context, loader, DashType.FULLSCREEN, secondsInAdvance)
 
 if output_to_display is False:
     windowRenderer = TkinkerRenderer(screen_width, screen_height)
 
 
-def render(render_context):
+def render(render_context, current_refresh, clear_interval):
     # Main program
     # try:
     if True:
-        logging.info("Running drawing refresh.")
+        logging.info("Running render function.")
     # except:
     #     logging.critical("Program ran into exception, drawing error message before crash.")
     #     shape = (3, 3, 628, 48)
@@ -77,11 +82,17 @@ def render(render_context):
 
     # Display fully drawn image, no matter what happened.
     if output_to_display:
-        from ui_image_kit import FullscreenMessageWithIcon
+        epd.init()
 
+        if current_refresh == clear_interval:
+            logging.info("Hit refresh threshold, doing full clean..")
+            epd.Clear()
+
+        logging.info("Drawing new content.")
         epd.display(epd.getbuffer(Himage))
 
         if clearAtFinish:
+            from ui_image_kit import FullscreenMessageWithIcon
             logging.info("Flag clear at finish set to true, clearing when done.")
 
             render_context.image = Image.new('1', (epd.width, epd.height), 255)
@@ -105,7 +116,8 @@ dashScheduler = DashScheduler(
     [defaultDash],
     render_function=render,
     context=context,
-    seconds_in_advance=secondsInAdvance
+    seconds_in_advance=secondsInAdvance,
+    full_clear_interval=clearInterval
 )
 dashScheduler.start()
 
