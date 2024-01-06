@@ -23,8 +23,6 @@ from GlobalVariables import *
 from ui_image_kit.ImageLoader import *
 from ui_image_kit.Structures import Context
 from dash_scheduler import DashScheduler
-from dashes.FullscreenTimeDash import FullscreenTimeDash
-from dashes.FullsreenAptMapDash import FullScreenAptMapDash
 from dashes.PhotoDash import PhotoDash
 from dash_kit.DashType import DashType
 
@@ -56,11 +54,8 @@ windowRenderer = None
 secondsInAdvance = 10 if output_to_display else 0
 
 clearInterval = 5
-
 refreshCounter = 0
 
-# defaultDash = FullscreenTimeDash(context, loader, DashType.FULLSCREEN, secondsInAdvance)
-# defaultDash = FullScreenAptMapDash(context, loader, DashType.FULLSCREEN, secondsInAdvance, client)
 defaultDash = PhotoDash(context, loader, DashType.FULLSCREEN, secondsInAdvance)
 
 if output_to_display is False:
@@ -69,18 +64,10 @@ if output_to_display is False:
 
 def render(render_context, current_refresh, clear_interval):
     # Main program
-    # try:
-    if True:
-        logging.info("Running render function.")
-    # except:
-    #     logging.critical("Program ran into exception, drawing error message before crash.")
-    #     shape = (3, 3, 628, 48)
-    #     draw.rectangle(shape, fill=0)
-    #     shape = (5, 5, 630, 50)
-    #     draw.rectangle(shape, fill=255, outline=255, width=1)
-    #     draw.text((10, 10), 'Program ran into exception, sleeping.', font=font24, fill=0)
 
-    # Display fully drawn image, no matter what happened.
+    logging.info("Running render function.")
+
+    # Rendering to real display. Display fully drawn image, no matter what happened.
     if output_to_display:
         epd.init()
 
@@ -91,6 +78,7 @@ def render(render_context, current_refresh, clear_interval):
         logging.info("Drawing new content.")
         epd.display(epd.getbuffer(Himage))
 
+        # Clear at finish flag displays message on the display and exits the application
         if clearAtFinish:
             from ui_image_kit import FullscreenMessageWithIcon
             logging.info("Flag clear at finish set to true, clearing when done.")
@@ -107,11 +95,11 @@ def render(render_context, current_refresh, clear_interval):
         # Sleep the display, so it consumes 0 enery
         logging.info("Drawing finished, sleeping display.")
         epd.sleep()
+    # Rendering to Window for debugging. Use "--output window" argument.
     else:
-        # Himage.show('Output')
         windowRenderer.renderImage(render_context.image)
 
-
+# Scheduler should make sure that the display refreshes every minute and starts refreshing earlier to handle slow display refresh
 dashScheduler = DashScheduler(
     [defaultDash],
     render_function=render,

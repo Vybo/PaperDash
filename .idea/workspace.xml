@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcf5f5da-43a3-4095-94e0-3e70471a30e1" name="Default Changelist" comment="Working full screen message view with icon.">
-      <change afterPath="$PROJECT_DIR$/dashes/PhotoDash.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pic/photos/IMG_9485.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pic/photos/IMG_9641.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlobalVariables.py" beforeDir="false" afterPath="$PROJECT_DIR$/GlobalVariables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dash.py" beforeDir="false" afterPath="$PROJECT_DIR$/dash.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dash_scheduler.py" beforeDir="false" afterPath="$PROJECT_DIR$/dash_scheduler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/waveshare_epd/epd7in5.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/waveshare_epd/epd7in5.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/waveshare_epd/epdconfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/waveshare_epd/epdconfig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui_image_kit/ImageLoader.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui_image_kit/ImageLoader.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,9 +33,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="1UG3dYqu8wYkPii9ekGN5OpUPVW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -53,7 +46,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Python.dash-window-output.executor": "Run",
+    "Python.dash-window-output.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "/Users/done/PaperDash"
