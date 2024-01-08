@@ -1,8 +1,7 @@
-from GlobalVariables import *
-from ui_image_kit.FullscreenView import *
-import os
-from PIL import Image, ImageDraw, ImageFont
 import datetime
+
+from PIL import Image, ImageFont
+from GlobalVariables import *
 from dashes.Dash import Dash
 
 
@@ -14,15 +13,13 @@ class PhotoDash(Dash):
         Dash.__init__(self, dash_type, seconds_in_advance)
         self.context = context
         self.loader = loader
-        self.photo = loader.get_bw_image('IMG_9641.png')
-        # There would be an image resize, but this image is exact fit for the display
+
         self.font_big = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 48)
         self.font_small = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
         self.font_tiny = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 14)
-        #self.firebase = client
+        # self.firebase = client
 
-
-    def drawContent(self):
+    def draw_content(self):
         # Fill white over everything
         self.context.draw.rectangle((0, 0, self.context.width, self.context.height), fill=255)
         time = datetime.datetime.now()
@@ -36,7 +33,8 @@ class PhotoDash(Dash):
         # Date & Time
         clock_offset = (self.font_small.size / 4, self.font_small.size / 4)
         date_offset = (clock_offset[0] + 6, clock_offset[1] + self.font_small.size)
-        clock_box = (clock_offset[0], clock_offset[1], self.font_tiny.size * 6, date_offset[1] + self.font_small.size)  # ugly ugly ugly
+        clock_box = (clock_offset[0], clock_offset[1], self.font_tiny.size * 6,
+                     date_offset[1] + self.font_small.size)  # ugly ugly ugly
 
         self.context.draw.rectangle(clock_box, fill=255, outline=0, width=2)
         self.context.draw.text(clock_offset, formatted_time, font=self.font_small, fill=0)
@@ -46,11 +44,13 @@ class PhotoDash(Dash):
         self.move_photo_index()
 
         photo_offset = (0, 0)
-        photo = self.loader.get_bw_image(self.photo_names[self.current_photo_index]
-                                    )
-        cropped_photo = photo.crop(self.calculate_crop_points(self.context.width, self.context.height))
+        photo = self.loader.get_bw_image(self.photo_names[self.current_photo_index])
 
-        resized_photo = cropped_photo.resize((self.context.width, self.context.height))
+        new_size = self.calculate_new_size(photo.width, photo.height, self.context.width)
+        new_size = round(new_size[0]), round(new_size[1])
+        resized_photo = photo.resize(new_size, Image.LANCZOS)
+        # cropped_photo = resized_photo.crop(self.calculate_crop_points(self.context.width, self.context.height))
+
         self.context.image.paste(resized_photo, photo_offset)
 
     def move_photo_index(self):
@@ -59,8 +59,14 @@ class PhotoDash(Dash):
         else:
             self.current_photo_index = self.current_photo_index + 1
 
+    def calculate_new_size(self, old_width, old_height, screen_width):
+        new_width = screen_width
+        new_height = new_width * old_height / old_width
+
+        return (new_width, new_height)
+
     def calculate_crop_points(self, screen_width, screen_height):
-        image_width, image_height = self.photo.size
+        image_width, image_height = screen_width, screen_height
 
         # calculate the aspect ratios
         image_aspect_ratio = image_width / image_height

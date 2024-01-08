@@ -1,5 +1,7 @@
-from PIL import Image
 import os
+
+from PIL import Image
+
 
 class ImageLoader:
     def __init__(self, resources_directory):

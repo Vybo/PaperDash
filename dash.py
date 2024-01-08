@@ -1,17 +1,19 @@
-from foundation_kit.Arguments import *
 import sys
+
+from foundation_kit.Arguments import *
 
 arguments = Arguments('--', sys.argv[1:])
 output_to_display = arguments.output_is_window() is False
 
 import logging
-from PIL import Image, ImageDraw, ImageFont
+from PIL import ImageDraw
 
-if output_to_display == False:
+if not output_to_display:
     from tkinker_renderer import TkinkerRenderer
 
 if output_to_display:
     from lib.waveshare_epd import epd7in5
+
     epd = epd7in5.EPD()
     screen_width = epd7in5.EPD_WIDTH
     screen_height = epd7in5.EPD_HEIGHT
@@ -98,7 +100,8 @@ def render(render_context, current_refresh, clear_interval):
         epd.sleep()
     # Rendering to Window for debugging. Use "--output window" argument.
     else:
-        windowRenderer.renderImage(render_context.image)
+        windowRenderer.render_image(render_context.image)
+
 
 # Scheduler should make sure that the display refreshes every minute and starts refreshing earlier to handle slow display refresh
 dashScheduler = DashScheduler(
@@ -109,4 +112,3 @@ dashScheduler = DashScheduler(
     full_clear_interval=clearInterval
 )
 dashScheduler.start()
-

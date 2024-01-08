@@ -1,7 +1,6 @@
+from PIL import ImageFont
 from GlobalVariables import *
 from ui_image_kit.FullscreenView import *
-from PIL import Image, ImageDraw, ImageFont
-import os
 
 
 class FullscreenMessageWithIcon(FullscreenView):
@@ -29,7 +28,7 @@ class FullscreenMessageWithIcon(FullscreenView):
         The icon will be on the left of the message with some space between.
         Must be called every time any property is changed, otherwise changes won't be reflected.
 
-        Overrride in subclasses by calling super().draw_view().
+        Override in subclasses by calling super().draw_view().
         This way, everything will be drawn with a Painters algorithm, thus layered from bottom to up correctly.
         """
 
@@ -45,7 +44,7 @@ class FullscreenMessageWithIcon(FullscreenView):
         icon_width = self.icon_size[0]
         icon_height = self.icon_size[1]
 
-        icon_x_pos = (self.context.width // 2) - (message_width) - (icon_width // 2 - self.spacing)
+        icon_x_pos = (self.context.width // 2) - message_width - (icon_width // 2 - self.spacing)
         icon_y_pos = (self.context.height // 2) - (icon_height // 2)
 
         message_x_pos = icon_x_pos + icon_width + self.spacing
@@ -55,4 +54,3 @@ class FullscreenMessageWithIcon(FullscreenView):
 
         self.context.image.paste(self.icon, offset)
         self.context.draw.text((message_x_pos, message_y_pos), self.message, font=self.font, fill=0)
-
