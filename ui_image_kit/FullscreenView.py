@@ -11,7 +11,7 @@ class FullscreenView:
         """Will draw the content into the context.
         Must be called every time any property is changed, otherwise changes won't be reflected.
 
-        Overrride in subclasses by calling super().draw_view().
+        Override in subclasses by calling super().draw_view().
         The super call must be called as the first call in the overriden draw() function, otherwise the order
         will get messed up.
 

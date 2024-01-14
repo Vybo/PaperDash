@@ -1,6 +1,3 @@
-from PIL import Image, ImageDraw
-
-
 class Context:
     def __init__(self, image, draw, width, height):
         self.image = image

@@ -1,13 +1,13 @@
-import paho.mqtt.client as mqtt
 import logging
+import paho.mqtt.client as mqtt
+
 from integrations import MosquitoEntities as entity
-import schedule
 
 
 def get_default_entities():
     return {
         'status': entity.BrokerStatus('homeassistant/status'),
-        #'homeassistant/sensor/main_room_temperature': entity.Sensor('homeassistant/sensor/main_room_temperature/#'),
+        # 'homeassistant/sensor/main_room_temperature': entity.Sensor('homeassistant/sensor/main_room_temperature/#'),
         'homeassistant/light/study_ceiling/state': entity.Light('homeassistant/light/study_ceiling/state'),
     }
 
@@ -16,7 +16,7 @@ class MosquitoClient:
     def __init__(self, entities=get_default_entities()):
         self.mqtt_broker = '-'
         self.client = mqtt.Client("paperdash")
-        self.client.username_pw_set('-', '-') #input here
+        self.client.username_pw_set('my_username', 'my_password')  # input here
         self.client.on_message = self.on_message
         self.client.on_connect = self.on_connect
         self.entities = entities
@@ -30,10 +30,10 @@ class MosquitoClient:
     def manual_loop(self):
         self.client.loop(timeout=1, max_packets=50)
 
-    def on_connect(self, client, userdata, flags, rc):
+    def on_connect(self, flags, rc):
         logging.info("[MQTT] Connected flags ", str(flags), "result code ", str(rc))
 
-    def on_message(self, client, userdata, message):
+    def on_message(self, message):
         logging.info("[MQTT] Received message: ", str(message.payload.decode("utf-8")))
         self.update_entity_with_message(message)
 

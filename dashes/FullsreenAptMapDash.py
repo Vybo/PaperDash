@@ -1,8 +1,7 @@
-from GlobalVariables import *
-from ui_image_kit.FullscreenView import *
-import os
-from PIL import Image, ImageDraw, ImageFont
 import datetime
+
+from PIL import ImageFont
+from GlobalVariables import *
 from dashes.Dash import Dash
 
 
@@ -21,8 +20,7 @@ class FullScreenAptMapDash(Dash):
 
         self.mqtt = client
 
-
-    def drawContent(self):
+    def draw_content(self):
         # Fill white over everything
         self.context.draw.rectangle((0, 0, self.context.width, self.context.height), fill=255)
         time = datetime.datetime.now()
@@ -44,7 +42,7 @@ class FullScreenAptMapDash(Dash):
 
         # Broker status
         broker_msg_offset = (78, 120)
-        broker_msg_box = (broker_msg_offset[0], broker_msg_offset[1], broker_msg_offset[0]*2, sum(list(broker_msg_offset)))
+        broker_msg_box = (broker_msg_offset[0], broker_msg_offset[1], broker_msg_offset[0] * 2, sum(list(broker_msg_offset)))
         self.context.draw.rectangle(broker_msg_box, fill=255)
         self.context.draw.text(broker_msg_offset, 'broker\noffline', font=self.font_small, fill=0)
 
@@ -92,13 +90,10 @@ class FullScreenAptMapDash(Dash):
     def draw_atm_sensor_box(self, offset, temperature_value, humidity_value):
         box = (offset[0] - 4, offset[1] - 4, offset[0] + 66, offset[1] + 36)
         formatted_temp = "{:.1f}".format(temperature_value)
-        formatted_hum = "{:}".format(round(humidity_value,1))
+        formatted_hum = "{:}".format(round(humidity_value, 1))
         self.context.draw.rectangle(box, fill=255)
         self.context.draw.text(offset, f'T: {formatted_temp} °C\nH: {formatted_hum} %', font=self.font_tiny, fill=0)
 
     def draw_bulb(self, offset, status_is_on):
         icon = self.bulb_on_icon if status_is_on else self.bulb_off_icon
         self.context.image.paste(icon, offset)
-
-
-
