@@ -11,6 +11,7 @@ My own dashboard implemented for Waveshare 7.5" BTW e-paper display
   * Fullscreen text message with icon (loaded from file)
 3. Dashboards (somewhat self-sufficient ViewModels handling what to draw into UI Parts)
   * Fulscreen clock
+  * Rotating photo frame mode (put images to folder, they'll be resized and shown on the display with clock)
   
 ## Planned features
 * Cycling of various Dashboards
